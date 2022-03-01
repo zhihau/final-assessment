@@ -10,8 +10,7 @@
             <td>狀態</td>
         </tr>
         <?php
-$rows=$Que->all(['parent'=>0,'sh'=>1]);
-foreach($rows as $k=>$row){
+// 載入資料程式碼 開始
         ?>
         <tr>
             <td><?=$k+1;?></td>
@@ -33,7 +32,7 @@ if(!isset($_SESSION['login'])){
             </td>
         </tr>
         <?php
-        }
+        // 載入資料程式碼 結束
         ?>
     </table>
 </fieldset>
