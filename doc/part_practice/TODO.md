@@ -1,6 +1,8 @@
 # 練習項目
 ---
 * 請在base.php寫出分頁程式碼
+* 請在base.php寫出總人數統計程式碼
+* 改css檔案
 * 請建立期末評量資料表並加入資料
 * 請在front/result.php寫出進度條程式碼
 * 請在front/que.php寫出載入資料程式碼
