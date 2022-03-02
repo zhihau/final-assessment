@@ -61,12 +61,7 @@
     }
     $('.show').on('click',function(){
         
-        let sh;
-        if($(this).data('sh')==1){
-            sh=0;
-        }else{
-            sh=1;
-        }
+        let sh=(parseInt($(this).data('sh'))==1)?0:1;
         let que={
             id:$(this).data('id'),
             sh:sh
@@ -76,11 +71,11 @@
             switch(que.sh){
                 case 1:
                 $(this).text('隱藏');
-                $(this).data('sh',1);
+                $(this).data('sh',que.sh);
                 break;
                 case 0:
                 $(this).text('開放');
-                $(this).data('sh',0);
+                $(this).data('sh',que.sh);
                 break;
             }
 
