@@ -8,7 +8,7 @@
     * News資料表可以加到六筆資料好測試分頁。
 
 ## 開始測驗
-* 改css檔案，#mm 5?0px改為540px，#lef 5?8px改為538px，#main 5?5px改為535px，#bottom padding加0。口訣5330
+* 改css檔案，#mm 5?0px改為540px，#lef 5?8px改為538px，#main 5?5px改為535px，#bottom padding加0。口訣4330
 ```
 #mm
 {
