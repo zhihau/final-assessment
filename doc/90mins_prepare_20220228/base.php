@@ -237,7 +237,7 @@ switch($tt){
         break;
 }
 
-
+// page
 $all=$News->math('count','*');
 $div=5;
 $pages=ciel($all/$div);
@@ -245,20 +245,33 @@ $now=$_GET['p']??1;
 $start=($now-1)*$div;
 $rows=$News->all(['sh'=>1]," limit $start,$div");
 foreach($rows as $row){
-
+    $checked=($row['sh']==1)?"checked":"";
 }
 if(($now-1)>0){
     $pre=$now-1;
-    echo "<a href='location.href=index.php?do=aa&p=$pre'> &lt; </a>";
+    echo "<a href='?do=news&p=$pre'> &lt; </a>";
 }
 for($i=1;$i<=$pages;$i++){
     $s=($i==$now)?"24px":"16px";
-    echo "<a href='location.href=index.php?do=aa&p=$i' style='font-size:$s'> $i </a>";
+    echo "<a href='?do=news&p=$i' style='font-size:$s'> $i </a>";
 }
 if(($now+1)<=$pages){
     $next=$now+1;
-    echo "<a href='location.href=index.php?do=aa&p=$next'> &gt; </a>";
+    echo "<a href='?do=news&p=$next'> &gt; </a>";
 }
+
+// total
+if(!isset($_SESSION['view']){
+    $view=$View->find(['date'=>date('Y-m-d')]);
+    if($view){
+       $view['total']++;
+       $View->save($view);
+      $_SESSION['view']=$view['total'];
+    }else{
+      $View->save(['date'=>date('Y-m-d'),'total'=>1]);
+      $_SESSION['view']=1;
+     }
+  }
 
 ?>
 
